@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro De Estudiantes</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="background-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <div class="container glass-panel">
+        <header>
+            <h1>Registro De Estudiantes</h1>
+            <button id="theme-toggle" class="icon-btn" aria-label="Cambiar tema">
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </header>
+
+        <main>
+            <!-- Welcome Section -->
+            <section id="welcome-section" class="active-section">
+                <div class="welcome-content">
+                    <h2>Bienvenido a Registro De Estudiantes</h2>
+                    <p>Gestiona la matrícula de manera fácil y moderna.</p>
+                    <button id="start-btn" class="primary-btn">Iniciar Registro</button>
+                </div>
+            </section>
+
+            <!-- Registration Form Section -->
+            <section id="form-section" class="hidden-section">
+                <h2>Nuevo Estudiante</h2>
+                <form id="student-form">
+                    <div class="input-group">
+                        <label for="student-name">Nombre del Estudiante</label>
+                        <input type="text" id="student-name" required placeholder="Ej. Juan Pérez">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="student-id">Carnet</label>
+                        <input type="text" id="student-id" required placeholder="Ej. 2025-1234K">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="student-career">Carrera</label>
+                        <div class="custom-select-wrapper">
+                            <div class="custom-select" id="custom-career-select">
+                                <div class="custom-select-trigger">
+                                    <span>Seleccione una carrera</span>
+                                    <div class="arrow"></div>
+                                </div>
+                                <div class="custom-options">
+                                    <span class="custom-option" data-value="Ingeniería de Sistemas">Ingeniería de
+                                        Sistemas</span>
+                                    <span class="custom-option" data-value="Ingeniería Eléctrica">Ingeniería
+                                        Eléctrica</span>
+                                    <span class="custom-option" data-value="Ingeniería Mecánica">Ingeniería
+                                        Mecánica</span>
+                                    <span class="custom-option" data-value="Ingeniería Civil">Ingeniería Civil</span>
+                                    <span class="custom-option" data-value="Ingeniería Industrial">Ingeniería
+                                        Industrial</span>
+                                    <span class="custom-option" data-value="Ingeniería Robótica">Ingeniería
+                                        Robótica</span>
+
+                                </div>
+                            </div>
+                            <input type="hidden" id="student-career" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="student-period">Año/Periodo de Ingreso</label>
+                        <input type="text" id="student-period" required placeholder="Ej. Segundo Semestre 2025">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="student-status">Estado del Estudiante</label>
+                        <div class="custom-select-wrapper">
+                            <div class="custom-select" id="custom-status-select">
+                                <div class="custom-select-trigger">
+                                    <span>Seleccione un estado</span>
+                                    <div class="arrow"></div>
+                                </div>
+                                <div class="custom-options">
+                                    <span class="custom-option" data-value="Activo">Activo</span>
+                                    <span class="custom-option" data-value="Inactivo/Retiro Temporal">Inactivo/Retiro
+                                        Temporal</span>
+                                    <span class="custom-option" data-value="Egresado">Egresado</span>
+                                </div>
+                            </div>
+                            <input type="hidden" id="student-status" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="student-shift">Tipo de Modalidad</label>
+                        <div class="custom-select-wrapper">
+                            <div class="custom-select" id="custom-shift-select">
+                                <div class="custom-select-trigger">
+                                    <span>Seleccione una modalidad</span>
+                                    <div class="arrow"></div>
+                                </div>
+                                <div class="custom-options">
+                                    <span class="custom-option" data-value="Diurna">Diurno</span>
+                                    <span class="custom-option" data-value="Sabatina">Sabatino</span>
+                                    <span class="custom-option" data-value="Dominical">Dominical</span>
+                                </div>
+                            </div>
+                            <input type="hidden" id="student-shift" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="student-campus">Sede o Campus</label>
+                        <div class="custom-select-wrapper">
+                            <div class="custom-select" id="custom-campus-select">
+                                <div class="custom-select-trigger">
+                                    <span>Seleccione una sede</span>
+                                    <div class="arrow"></div>
+                                </div>
+                                <div class="custom-options">
+                                    <span class="custom-option" data-value="Managua">Managua</span>
+                                    <span class="custom-option" data-value="Juigalpa">Juigalpa</span>
+                                </div>
+                            </div>
+                            <input type="hidden" id="student-campus" required>
+                        </div>
+                    </div>
+
+                    <div class="button-group">
+                        <button type="submit" class="primary-btn">Registrar</button>
+                        <button type="button" id="show-list-btn" class="primary-btn" style="display: none;">Mostrar
+                            estudiantes registrados</button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- List Section -->
+            <section id="list-section" class="hidden-section">
+                <h2>Estudiantes Registrados</h2>
+                <div class="table-container">
+                    <table id="students-table">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Carnet</th>
+                                <th>Carrera</th>
+                                <th>Fecha</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Rows will be added here dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+                <button id="back-to-form-btn" class="secondary-btn">Registrar Otro Estudiante</button>
+            </section>
+
+            <!-- Details Section -->
+            <section id="details-section" class="hidden-section">
+                <h2>Detalles del Estudiante</h2>
+                <div class="details-content">
+                    <div class="detail-item">
+                        <strong>Nombre:</strong> <span id="detail-name"></span>
+                    </div>
+                    <div class="detail-item">
+                        <strong>Carnet:</strong> <span id="detail-id"></span>
+                    </div>
+                    <div class="detail-item">
+                        <strong>Carrera:</strong> <span id="detail-career"></span>
+                    </div>
+                    <div class="detail-item">
+                        <strong>Fecha de Registro:</strong> <span id="detail-date"></span>
+                    </div>
+                    <div class="detail-item">
+                        <strong>Año/Periodo:</strong> <span id="detail-period"></span>
+                    </div>
+                    <div class="detail-item">
+                        <strong>Estado:</strong> <span id="detail-status"></span>
+                    </div>
+                    <div class="detail-item">
+                        <strong>Jornada:</strong> <span id="detail-shift"></span>
+                    </div>
+                    <div class="detail-item">
+                        <strong>Sede:</strong> <span id="detail-campus"></span>
+                    </div>
+                </div>
+                <button id="back-to-list-btn" class="secondary-btn">Volver a la Lista</button>
+            </section>
+        </main>
+    </div>
+
+    <script src="jscript.js"></script>
+</body>
+
+</html>
